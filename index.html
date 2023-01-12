@@ -1,96 +1,28 @@
-<!doctype html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Super Mario 64 by Nintendo and augustberchelmann</title>
-    <style>
-      body, html{
-        margin: 0;
-        padding: 0;
-        width: 100vw;
-        min-height: 100vh;
-        background-color: #111;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        image-rendering: pixelated;
-        scrollbar-width: none;
-      }
-      ::-webkit-scrollbar {
-        display: none;
-      }
-      #container {
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      canvas {
-        width: 100vw;
-        height: 100vh;
-      }
-      #controls {
-        margin-left: 1em;
-        display: flex;
-        align-items: center;
-      }
-      #controller, #dmca {
-        padding-left: 4em;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="controls">
-      <div id="keyboard">
-        <h2>Keyboard Controls</h2>
-        <ul>
-          <li>Movement: WASD</li>
-          <li>A button: L</li>
-          <li>B button: K</li>
-          <li>Start buttont: Space key</li>
-          <li>Look around: Arrow keys</li>
-        </ul>
-      </div>
-      <div id="controller">
-        <h2>Press page down to hide these instructions. (PGDOWN on ChromeOS is Ctrl+Alt+Down Arrow)</h2>
-        <h2>Press page up to see them again (PGUP on ChromeOS is Ctrl+Alt+Up Arrow).</h2>
-      </div>
-    </div>
-    <div id="container">
-      <canvas class="emscripten" id="canvas"></canvas>
-    </div>
-    <script type='text/javascript'>
-      var Module = {
-        preRun: [],
-        postRun: [],
-        print: (function() {
-          return function(text) {
-            if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-            console.log(text);
-          };
-        })(),
-        printErr: function(text) {
-          if (arguments.length > 1)
-            text = Array.prototype.slice.call(arguments).join(' ');
-          console.error(text);
-        },
-        canvas: (function() {
-          var canvas = document.getElementById('canvas');
-          canvas.width = window.innerWidth; // Todo: how to do this from c++
-          canvas.height = window.innerHeight;
-          canvas.addEventListener("webglcontextlost", function(e) {
-            alert('WebGL context lost. You will need to reload the page.');
-            e.preventDefault();
-          }, false);
-          return canvas;
-        })(),
-        setStatus: function(text) {
-        }
-      };
-    </script>
-    <script async type="text/javascript" src="sm64.us.f3dex2e.js"></script>
-    <script>
-    </script>
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shark Development Super Mario 64 Mirror by Chase Wicklund</title>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 class="center">SM64 | Ported to web by Shark Development, made by Chase Wicklund (@jscraft on repl.it)</h1>
+<hr></hr>
+<h1 class="center">What is Super Mario 64?</h1>
+<hr></hr>
+<h3 class="center">Super Mario 64 is a 3D platformer game released for the Nintendo 64 in 1996 for Japan and North America and in 1997 for Europe and Australia. This game was one of two (three in Japan) launch titles for the Nintendo 64, along with Pilotwings 64, which helped drive initial sales of the console. Since its release, Super Mario 64 has been widely acclaimed as one of the greatest and most important games of all time.</h3>
+<hr></hr>
+
+<!-- Menu Items -->
+<div id="menu">
+<a href="./start.html"><h1>Start Game</h1></a><h1>|||</h1><a href="./pages/controls.html"><h1>Game Controls</h1></a><h1>|||</h1><a href="./pages/faq.html"><h1>Frequently Asked Questions</h1></a><h1>|||</h1><a href="./pages/guide.html"><h1>Players Guide</h1></a><h1>|||</h1><a href="./pages/mirrors.html"><h1>Mirrors</h1></a><h1>|||</h1><a href="https://replit.com/@jscraft"><h1>Other Projects</h1></a>
+</div>
+
+</body>
+
+<!-- Alerts
+<script>
+Swal.fire('Thanks for using the GitHub Release: @SevenworksDev/SM64-JS')
+</script>
+ -->
 </html>
